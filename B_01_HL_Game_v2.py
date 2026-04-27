@@ -121,7 +121,7 @@ if num_rounds == "":
     num_rounds = 5
 
 # Get Game parameters
-default_params = yes_no("Do you want to use the default game parameters")
+default_params = yes_no("Do you want to use the default game parameters? ")
 if default_params == "yes":
     low_num = 0
     high_num = 10
@@ -248,12 +248,12 @@ if rounds_played > 0:
     all_scores.sort()
     best_score = all_scores[0]
     worst_score = all_scores[-1]
+    average_score = sum(all_scores) / len(all_scores)
 
     # Output Game Statistics
     print("📊📊📊 Game Statistics 📊📊📊")
-    print(f"👍 Best: {best_score:.2f} \t "
-          f"😢 Worst: {worst_score:.2f} \t "
-          f"👔 Average: {all_scores:,2f}")
+    print(f"Best:{best_score} | Worst:{worst_score} | Average:{average_score:.2f} ")
+    print()
 
     # ask the user if they want to see their game history and output if requested.
     see_history = yes_no("\nDo you want to see your game history? ")
